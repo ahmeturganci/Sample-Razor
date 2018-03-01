@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<h2>Sample - Razor  Login Page</h2>
+
+
+<div class="row">
+    <div class="col-md-2 col-md-offset-5">
+        <button class="btn btn-default" id="btnLogin" href="">@Html.ActionLink("Login", "Login", "Login")</button>
+
+        <button class="btn btn-default" id="btnRegister">@Html.ActionLink("Register", "Register", "Login")</button>
+    </div>
+</div>

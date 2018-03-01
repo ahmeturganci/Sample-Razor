@@ -1,0 +1,24 @@
+﻿@model Model.Models.CustomerVM
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-5">
+
+            @Html.LabelFor(model => model.Customer.email)
+            @Html.TextBoxFor(model => model.Customer.email, new { id = "CustomerEmail", @class = "form-control" })
+            <br />
+            @Html.LabelFor(model => model.Customer.password)
+            @Html.TextBoxFor(model => model.Customer.password, new { id = "CustomerPassword", @class = "form-control", type = "password" })
+            <br />
+
+            <input type="submit" value="Login" class="btn btn-warning" />
+        </div>
+    </div>
+}
