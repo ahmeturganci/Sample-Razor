@@ -1,4 +1,5 @@
 ﻿using Model.Models;
+using Sample_Razor.BL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,8 @@ namespace Sample_Razor.Controllers
 {
     public class LoginController : Controller
     {
-
-        DemoCtsContext db = new DemoCtsContext();//database connection expression
-
         /// <summary>
-        /// Login page view
+        /// Login page index/main view
         /// </summary>
         /// <returns></returns>
         public ActionResult Index()
@@ -22,7 +20,7 @@ namespace Sample_Razor.Controllers
         }
 
         /// <summary>
-        /// Login View
+        /// Login view page
         /// </summary>
         /// <returns></returns>
         public ActionResult Login()
@@ -30,69 +28,49 @@ namespace Sample_Razor.Controllers
             return View();
         }
 
-        /// <summary>
-        /// Login Page post status
-        /// </summary>
-        /// <param name="user">login param email and password</param>
-        /// <returns>successe-> TRUE else notfound page</returns>
-        [HttpPost]
-        public ActionResult Login(CustomerVM user)// WHY NOT WORKING LoginUserView say selçuk
-        {
-            var wantLogin = db.Customers
-                  .Where(z => z.email == user.Customer.email && z.password == user.Customer.password)
-                  .FirstOrDefault();
 
-            if (wantLogin == null)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult Login(CustomerVM user)
+        {
+            var response = BusinessLayer.Login(user);
+            if( response == true)
             {
-                return HttpNotFound();
+                return RedirectToAction("Index", "Product");
             }
             else
             {
-                return Redirect("/Home/Index");
+                return View("Login");
             }
 
         }
 
-        /// <summary>
-        /// register view
-        /// </summary>
-        /// <returns></returns>
+
         public ActionResult Register()
         {
             return View();
-
         }
 
-        /// <summary>
-        /// Register page post statu
-        /// </summary>
-        /// <param name="user">Register post param email,name,surname,password</param>
-        /// <returns>successe-> TRUE else notfound page</returns>
+        
         [HttpPost]
         public ActionResult Register(CustomerVM user)
         {
-            using (DemoCtsContext db = new DemoCtsContext())
+            var response = BusinessLayer.Register(user);
+            if (response)
             {
-                //var cus = (from k in db.Customers
-                //           where k.email == customer.email
-                //           select k).SingleOrDefault(); --> LINQ
-
-                var cus = db.Customers
-                            .Where(x => x.email == user.Customer.email)
-                            .SingleOrDefault();
-                if (cus == null)
-                {
-                    //Added try catch
-                    db.Customers.Add(user.Customer);
-                    db.SaveChanges();
-                    return Redirect("Login");
-
-                }
-                else
-                    return View("Kayıt Başarısız");
-
+                return View("Product/Index");
             }
+            else
+            {
+                return View("Register");
+            }
+            
 
         }
+       
     }
 }

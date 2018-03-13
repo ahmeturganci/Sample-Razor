@@ -5,40 +5,37 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Register</h2>
+<h2>Register -> @Html.ActionLink("Login", "Login", "Login")</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Sample-Razor @ViewBag.Title</h4>
+
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-       
+
         <div class="row">
-            <div class="col-md-2 col-md-offset-5">
+            <div class="col-md-12 col-md-offset-12">
                 @Html.LabelFor(model => model.Customer.name)
-                @Html.TextBoxFor(model => model.Customer.name, new { id = "CustomerName", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Customer.name, new { id = "CustomerName", @class = "form-control", placeholder = "Name" })
                 <br />
                 @Html.LabelFor(model => model.Customer.surname)
-                @Html.TextBoxFor(model => model.Customer.surname, new { id = "CustomerSurname", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Customer.surname, new { id = "CustomerSurname", @class = "form-control", placeholder = "Surname" })
                 <br />
                 @Html.LabelFor(model => model.Customer.email)
-                @Html.TextBoxFor(model => model.Customer.email, new { id = "CustomerEmail", @class = "form-control" })
+                @Html.TextBoxFor(model => model.Customer.email, new { id = "CustomerEmail", @class = "form-control", placeholder = "Email" })
                 <br />
                 @Html.LabelFor(model => model.Customer.password)
-                @Html.TextBoxFor(model => model.Customer.password, new { id = "CustomerPassword", @class = "form-control", type = "password" })
+                @Html.TextBoxFor(model => model.Customer.password, new { id = "CustomerPassword", @class = "form-control", type = "password", placeholder = "Password" })
                 <br />
 
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Register" class="btn btn-success btn-lg" />
             </div>
         </div>
-               
-       
+
+
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>

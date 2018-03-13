@@ -3,16 +3,17 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+   
+</style>
 
+<div class="jumbotron" id="centerJ">
+    <h1>Sample Razor</h1>
+    <p> MVC ve Razor yapılarını kullanarak basit bir başlangıç projesi yapmayı hedefledim. <i> <span class="glyphicon glyphicon-book"></span></i> <a href="http://www.gihub.com/ahmeturganci/Sample-Razor">Kaynağına git</a> </p>
+   
+    <p>Kayıt/Giriş Örnek olması manasındadır.</p>
+    <br />
+        <button class="btn btn-default btn-lg" id="btnLogin" href="">@Html.ActionLink("Login", "Login", "Login")</button>
+        <button class="btn btn-default btn-lg" id="btnLogin" href="">@Html.ActionLink("Register", "Register", "Login")</button>
 
-
-<h2>Sample - Razor  Login Page</h2>
-
-
-<div class="row">
-    <div class="col-md-2 col-md-offset-5">
-        <button class="btn btn-default" id="btnLogin" href="">@Html.ActionLink("Login", "Login", "Login")</button>
-
-        <button class="btn btn-default" id="btnRegister">@Html.ActionLink("Register", "Register", "Login")</button>
-    </div>
 </div>

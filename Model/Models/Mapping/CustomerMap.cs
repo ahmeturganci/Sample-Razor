@@ -12,24 +12,19 @@ namespace Model.Models.Mapping
 
             // Properties
             this.Property(t => t.name)
-                .IsFixedLength()
-                .HasMaxLength(10);
+                .HasMaxLength(50);
 
             this.Property(t => t.surname)
-                .IsFixedLength()
-                .HasMaxLength(10);
+                .HasMaxLength(50);
 
             this.Property(t => t.email)
-                .IsFixedLength()
-                .HasMaxLength(10);
+                .HasMaxLength(50);
 
             this.Property(t => t.password)
-                .IsFixedLength()
-                .HasMaxLength(10);
+                .HasMaxLength(50);
 
             this.Property(t => t.phoneNo)
-                .IsFixedLength()
-                .HasMaxLength(10);
+                .HasMaxLength(50);
 
             // Table & Column Mappings
             this.ToTable("Customer");

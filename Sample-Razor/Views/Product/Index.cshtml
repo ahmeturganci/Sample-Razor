@@ -4,7 +4,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@ViewBag.Title</h2>
+<img src="~/Content/img/srlogo.png" class="img-circle img-responsive" style="margin:0 auto; height:30%;width:20%;" />
+@Html.ActionLink("Add Product", "AddProduct", "Product", "class=btn btn-default");
+
 
 @{Html.RenderAction("List", "Product");}
 
