@@ -23,7 +23,7 @@ Bunlar ile ilgili ayrıntıya devam etmek için Bora hocam çok güzel bir yazı
 ## Bir MVC Projesi Oluşturmak. 
 
 Kurum içerisinde visual sutudio 2015 ve 2015 ile uyumlu birkaç eklenti kullanılmakta 
-> Örneğin: # Entity Framework Power Tools Beta 4
+> Örneğin: # Entity Framework Power Tools Beta 4 Eğer kullanırken hata alırsanır solitionun sürümünü bir yukarı yükseltip tekrar aşağı çekerseniz sorun kalmayacak. İlişkili hata https://stackoverflow.com/questions/36421344/visual-studio-2015-update-2-breaks-ef-reverse-code-engineer-vsix
 - Öncelikle VS15 açalım.
 -  File > New > Project > Visual C# > Web > ASP .Net Web Application.
 - Sonrasındaki ekranda "Select a Template" sekmesinden MVC seçiyoruz ve "OK" diyoruz. 
