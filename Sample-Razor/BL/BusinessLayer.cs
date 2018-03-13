@@ -78,6 +78,26 @@ namespace Sample_Razor.BL
 
         }
 
+        public static bool EditProduct(Product product)
+        {
+            var tempProc = db.Products
+                             .Where(x => x.id == product.id)
+                             .FirstOrDefault();
+            if(tempProc != null)
+            {
+                tempProc.name = product.name;
+                tempProc.description = product.description;
+                db.SaveChanges();
+                return true;
+                
+            }
+            else
+            {
+                return false    ;
+            }
+
+
+        }
 
         public static bool DeleteProduct(int? id)
         {

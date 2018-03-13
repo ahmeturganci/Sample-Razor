@@ -10,30 +10,14 @@ namespace Sample_Razor.Controllers
 {
     public class LoginController : Controller
     {
-        /// <summary>
-        /// Login page index/main view
-        /// </summary>
-        /// <returns></returns>
         public ActionResult Index()
         {
             return View();
         }
-
-        /// <summary>
-        /// Login view page
-        /// </summary>
-        /// <returns></returns>
         public ActionResult Login()
         {
             return View();
         }
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="user"></param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult Login(CustomerVM user)
         {

@@ -10,11 +10,12 @@ namespace Sample_Razor.Controllers
 {
     public class ProductController : Controller
     {
-        // GET: Product
+
         public ActionResult Index()
         {
             return View();
         }
+
         public ActionResult List()
         {
             var response = BusinessLayer.GetAllProducts();
@@ -27,6 +28,7 @@ namespace Sample_Razor.Controllers
                 return View("No Product");
             }
         }
+
         public ActionResult AddProduct()
         {
             return View();
@@ -45,6 +47,15 @@ namespace Sample_Razor.Controllers
                 return View("Error");
             }
         }
+
+
+        public ActionResult EditProduct(ProductVM product)
+        {
+
+            BusinessLayer.EditProduct(product.Product);
+            return View("List");
+        }
+
         public ActionResult DeleteProduct(int? id)
         {
             var response = BusinessLayer.DeleteProduct(id);

@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>ProductVM</h4>
         <hr />
@@ -18,7 +18,7 @@
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 @Html.LabelFor(model => model.Product.name)
-                @Html.TextBoxFor(model => model.Product.name, new { id = "ProductName", @class = "form-control"  })
+                @Html.TextBoxFor(model => model.Product.name, new { id = "ProductName", @class = "form-control" })
                 <br />
                 @Html.LabelFor(model => model.Product.description)
                 @Html.TextBoxFor(model => model.Product.description, new { id = "ProductDescription", @class = "form-control" })
