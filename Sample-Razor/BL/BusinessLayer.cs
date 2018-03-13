@@ -8,6 +8,7 @@ namespace Sample_Razor.BL
 {
     public static class BusinessLayer
     {
+
         public static DemoCtsContext db = new DemoCtsContext();
 
         public static bool Login(CustomerVM customer)
