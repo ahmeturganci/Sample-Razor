@@ -18,26 +18,20 @@ namespace Sample_Razor.Controllers
 
         public ActionResult List()
         {
-            var response = BusinessLayer.GetAllProducts();
-            if (response != null)
-            {
-                return View(response);
-            }
-            else
-            {
-                return View("No Product");
-            }
+            var response = new ProductVM();
+            response.ProductList = BusinessLayer.GetAllProducts().ToList();
+            return View(response);
         }
 
-        public ActionResult AddProduct()
+        public ActionResult Create()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddProduct(ProductVM product)
+        public ActionResult Create(ProductVM product)
         {
-            var response = BusinessLayer.AddProduct(product);
+            var response = BusinessLayer.AddProduct(product.Product);
             if (response)
             {
                 return View("Index");
@@ -49,12 +43,57 @@ namespace Sample_Razor.Controllers
         }
 
 
-        public ActionResult EditProduct(ProductVM product)
-        {
+        //public ActionResult Edit(int? id)
+        //{
 
-            BusinessLayer.EditProduct(product.Product);
-            return View("List");
+        //    return View();
+
+
+        //}
+
+        //[HttpPost]
+        //public ActionResult Edit(ProductVM product)
+        //{
+        //    var response = BusinessLayer.EditProduct(id);
+        //    if (response)
+        //    {
+        //        return View("List");
+        //    }
+        //    else
+        //    {
+        //        return View("ERROR");
+        //    }
+        //}
+
+        public ActionResult Edit(int? id)
+        {
+            
+            ProductVM p = new ProductVM();
+            var eProduct = BusinessLayer.GetProduct((int)id);
+           
+            p.Product = eProduct;
+            return View(p);
         }
+
+        [HttpPost]
+        public ActionResult Edit(ProductVM product)
+        {
+            ProductVM tempProduct = new ProductVM();
+            if (product.Product.id== null)
+            {
+                //add new product
+                BusinessLayer.AddProduct(product.Product);
+                return Redirect("Index");
+            }
+            else
+            {
+                BusinessLayer.EditProduct(product.Product);
+
+            }
+            return View();
+        }       
+
+
 
         public ActionResult DeleteProduct(int? id)
         {

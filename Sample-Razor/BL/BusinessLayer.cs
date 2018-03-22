@@ -46,13 +46,19 @@ namespace Sample_Razor.BL
 
         }
 
-
-        public static List<Customer> GetAllProducts()
+        public static Product GetProduct(int id)
         {
-            var customerList = db.Customers.ToList();
-            if (customerList != null)
+            var proc = db.Products.First(x => x.id == id);
+            return proc;
+        }
+
+        public static IEnumerable<Product> GetAllProducts()
+        {
+            var productList = db.Products
+                                    .Where(x => x.id != null).ToList();
+            if (productList != null)
             {
-                return customerList;
+                return productList;
             }
             else
             {
@@ -60,12 +66,12 @@ namespace Sample_Razor.BL
             }
         }
 
-        public static bool AddProduct(ProductVM product)
+        public static bool AddProduct(Product product)
         {
             var tempAddProduct = db.Products
-                                   .Where(x => x.name == product.Product.name)
+                                   .Where(x => x.name == product.name)
                                    .FirstOrDefault();
-            if (tempAddProduct != null)
+            if (tempAddProduct == null)
             {
                 db.Products.Add(tempAddProduct);
                 db.SaveChanges();
@@ -78,22 +84,26 @@ namespace Sample_Razor.BL
 
         }
 
-        public static bool EditProduct(Product product)
+        public static bool EditProduct(Product proc)
         {
             var tempProc = db.Products
-                             .Where(x => x.id == product.id)
+                             .Where(x => x.id == proc.id)
                              .FirstOrDefault();
-            if(tempProc != null)
+
+            if (tempProc != null)
             {
-                tempProc.name = product.name;
-                tempProc.description = product.description;
+                Product temp = new Product
+                {
+                    name = tempProc.name,
+                    description = tempProc.description
+                };
                 db.SaveChanges();
                 return true;
-                
+
             }
             else
             {
-                return false    ;
+                return false;
             }
 
 

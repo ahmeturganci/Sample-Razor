@@ -6,7 +6,7 @@ namespace Model.Models
     public partial class ProductVM
     {
         public Product Product { get; set; }
-        public IEnumerable<Product> ProductList { get; set; }
+        public List<Product> ProductList { get; set; }
 
     }
 }
