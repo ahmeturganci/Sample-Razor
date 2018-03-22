@@ -37,6 +37,10 @@ Kurum içerisinde visual sutudio 2015 ve 2015 ile uyumlu birkaç eklenti kullan�
 | Script     | Javascript dosyalarının yeraldığı klasördür. DefaultjQuerydosyaları yer alır.                                                                                                                                                                                             |
 | Content    | CSs dosyalarının bulunduğu klasördür.                                                                                                                                                                                                                                     |
 | App_Data   | VerilerXML, txtgibi dosyalarda saklanıyorsa, bu dosyaların yer aldığı klasördür.                                                                                                                                                                                          |
-| Layout     | •Uygulamalarda genelde değişmeyen UI elemanlarıbulunmaktadır (Logo, üst menü, alt menü, navigasyonbar). •ASP.NET MVC içerisindeki LayoutView’larsayesinde her sayfadabu ortak kısımları kodlamak zorunda kalmayız. ASP.NET Web Forms içerisindeki Master Page’lerebenzer. |
-Dosya yapısınıda bu şekilde. 
+| Layout     | •Uygulamalarda genelde değişmeyen UI elemanlarıbulunmaktadır (Logo, üst menü, alt menü, navigasyonbar). •ASP.NET MVC içerisindeki LayoutView’larsayesinde her sayfadabu ortak kısımları kodlamak zorunda kalmayız. ASP.NET Web Forms içerisindeki Master Page’lerebenzer. 
+
+## Yapı 
+![files](https://user-images.githubusercontent.com/13600735/37754771-f683b60e-2db3-11e8-9279-7c58c2e94a67.png)
+
+
 
