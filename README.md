@@ -1,7 +1,7 @@
 # Sample Razor
 
 Razor Nedir?
-Asp.Net Mvc 3** sürümü ile  gelen **razor view engine** görüntüleme biçimidir. **Razor syntax** aracılıyla ana makine kısmında ( server side ) çalışacak kodların ayrımını ' **@** ' işareti aracılıyla yapmaktayız.
+Asp.Net Mvc 3** sürümü ile  gelen **razor view engine** görüntüleme biçimidir. **Razor syntax** aracılığıyla ana makine kısmında ( server side ) çalışacak kodların ayrımını ' **@** ' işareti aracılığıyla yapmaktayız.
 ```
 <!-- Basit biçimde bir değişken tanımladık. -->
 @{ var ileti = "Selam Razor"; }
@@ -27,17 +27,17 @@ Kurum içerisinde visual sutudio 2015 ve 2015 ile uyumlu birkaç eklenti kullan�
 - Öncelikle VS15 açalım.
 -  File > New > Project > Visual C# > Web > ASP .Net Web Application.
 - Sonrasındaki ekranda "Select a Template" sekmesinden MVC seçiyoruz ve "OK" diyoruz. 
-- Karşımız projemiz ve bizim için ürettiği dosyalar gelitor peki bunlar nedir ne işe yarar. 
+- Karşımız projemiz ve bizim için ürettiği dosyalar geliyor peki bunlar nedir ne işe yarar. 
 - 
 
-| View       | MVC View’lerininbulunduğu klasördür. HTML, Razorveya Webformformatında olabilirler.                                                                                                                                                                                       |
+| View       | MVC View’lerinin bulunduğu klasördür. HTML, Razor veya Webform formatında olabilirler.                                                                                                                                                                                       |
 |------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Model      | Model class’larınınbulunduğuklasördür. Örneğin: Müşteri sınıfı ve validasyonları.                                                                                                                                                                                         |
-| Controller | Action’larasahip Controller’larınyer aldığı klasördür. İstemciden request’ialır,uygun action’ıtetikler, modelden doğru nesneyi yaratır ve View’abindeder. View kullanıcıya responseolarak gösterilir.                                                                     |
-| Script     | Javascript dosyalarının yeraldığı klasördür. DefaultjQuerydosyaları yer alır.                                                                                                                                                                                             |
+| Model      | Model class’larının bulunduğu klasördür. Örneğin: Müşteri sınıfı ve validasyonları.                                                                                                                                                                                         |
+| Controller | Action’lara sahip Controller’ların yer aldığı klasördür. İstemciden request’i alır,uygun action’ı tetikler, modelden doğru nesneyi yaratır ve View’a bind eder. View kullanıcıya response olarak gösterilir.                                                                     |
+| Script     | Javascript dosyalarının yeraldığı klasördür. Default jQuery dosyaları yer alır.                                                                                                                                                                                             |
 | Content    | CSs dosyalarının bulunduğu klasördür.                                                                                                                                                                                                                                     |
-| App_Data   | VerilerXML, txtgibi dosyalarda saklanıyorsa, bu dosyaların yer aldığı klasördür.                                                                                                                                                                                          |
-| Layout     | •Uygulamalarda genelde değişmeyen UI elemanlarıbulunmaktadır (Logo, üst menü, alt menü, navigasyonbar). •ASP.NET MVC içerisindeki LayoutView’larsayesinde her sayfadabu ortak kısımları kodlamak zorunda kalmayız. ASP.NET Web Forms içerisindeki Master Page’lerebenzer. 
+| App_Data   | Veriler XML, txt gibi dosyalarda saklanıyorsa, bu dosyaların yer aldığı klasördür.                                                                                                                                                                                          |
+| Layout     | •Uygulamalarda genelde değişmeyen UI elemanları bulunmaktadır (Logo, üst menü, alt menü, navigasyonbar). •ASP.NET MVC içerisindeki LayoutView’larsayesinde her sayfadabu ortak kısımları kodlamak zorunda kalmayız. ASP.NET Web Forms içerisindeki Master Page’lere benzer. 
 
 ## Yapı 
 ![files](https://user-images.githubusercontent.com/13600735/37754771-f683b60e-2db3-11e8-9279-7c58c2e94a67.png)
