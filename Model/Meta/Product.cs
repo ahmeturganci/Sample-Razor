@@ -12,6 +12,7 @@ namespace Model.Models
         [Display(Name = "Product Id")]
         public int id { get; set; }
 
+        // Kopyala yapıştırdan yadigar Range kuralı kalmış sanırım string propartilerde de. Bilmeyen için kafa karıştırabilir.
         [Range(0, int.MaxValue, ErrorMessageResourceName = "Meta_Range_Incorrect")]
         [Display(Name = "Product Name")]
         public string name { get; set; }
