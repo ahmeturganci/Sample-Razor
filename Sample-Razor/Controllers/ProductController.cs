@@ -67,14 +67,15 @@ namespace Sample_Razor.Controllers
 
         public ActionResult Edit(int? id)
         {
-            
             ProductVM p = new ProductVM();
             var eProduct = BusinessLayer.GetProduct((int)id);
+            // parametre nulable ama (int)id ifadesi null kabul etmez hata ekranı döndürür; parametre int 
            
             p.Product = eProduct;
             return View(p);
         }
 
+        // Bu metot hem güncelleme hem yeni kayıt işi yapıyor. Edit ismi yerine Save daha iyi karşılayabilir belki. Ayrıca Create isimli bir metot var
         [HttpPost]
         public ActionResult Edit(ProductVM product)
         {
@@ -95,7 +96,7 @@ namespace Sample_Razor.Controllers
 
 
 
-        public ActionResult DeleteProduct(int? id)
+        public ActionResult DeleteProduct(int? id) // id'nin null kontrolü BL kısmına bırakılmadan burada yapılabilir
         {
             var response = BusinessLayer.DeleteProduct(id);
             if (response)
