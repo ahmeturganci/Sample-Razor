@@ -56,7 +56,7 @@ namespace Sample_Razor.BL
         {
             var productList = db.Products
                                     .Where(x => x.id != null).ToList();
-            if (productList != null)
+            if (productList != null) // Bu if niye var ve ne iş yapar :)
             {
                 return productList;
             }
@@ -76,6 +76,7 @@ namespace Sample_Razor.BL
                 db.Products.Add(tempAddProduct);
                 db.SaveChanges();
                 return true;
+                // Kayıt sırasında beklenmedik bir hata olabilir. try catch kullanılsa iyi olur.
             }
             else
             {
@@ -99,7 +100,7 @@ namespace Sample_Razor.BL
                 };
                 db.SaveChanges();
                 return true;
-
+                // Burada herhangi bir güncelleme işlemi yapıldığına emin değilim :)
             }
             else
             {
